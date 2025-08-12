@@ -1,0 +1,147 @@
+.card-custom {
+  width: 100%;
+  height: auto;
+  min-height: 400px;
+  background: #f8f4ef;
+  position: relative;
+  border-radius: 0;
+  clip-path: url(#card-shape);
+  display: flex;
+  flex-direction: column;
+}
+
+/* SVG clip-path определение */
+.clip-path-svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.card-img-top {
+  margin: 5%;
+  border-radius: 8px;
+  height: 180px;
+  width: 90%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.card-body {
+  padding: 20px;
+  padding-bottom: 60px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.card-arrow {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: #ff7900;
+  color: #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  transition: background .2s;
+  border: none;
+  z-index: 2;
+}
+
+.card-arrow:hover {
+  background: #d86200;
+}
+
+.card-title {
+  color: #ff7900;
+  font-weight: bold;
+}
+
+.btn-orange {
+  background: #ff7900;
+  color: #fff;
+  border-radius: 20px;
+  padding: 0.5rem 2rem;
+  font-weight: bold;
+  border: none;
+  box-shadow: none;
+}
+
+.btn-orange:hover {
+  background: #d86200;
+  color: #fff;
+}
+
+.section-title {
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+/* Медиазапросы для адаптации */
+/* Вертикальный мобильный - 1 карточка (<576px) */
+@media (max-width: 575.99px) {
+  .col-12.col-sm-6.col-md-4.col-lg-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+/* Показываем только первые 4 карточки */
+  .col-12.col-sm-6.col-md-4.col-lg-3:nth-child(-n+4) {
+    display: block;
+  }
+
+  /* Скрываем 5-ю и 6-ю карточки */
+  .col-12.col-sm-6.col-md-4.col-lg-3:nth-child(n+5) {
+    display: none;
+  }
+}
+
+/* Горизонтальный мобильный - 2 карточки (576px-767px) */
+@media (min-width: 576px) and (max-width: 767.99px) {
+  .col-12.col-sm-6.col-md-4.col-lg-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  /* Скрываем 5-ю и 6-ю карточки */
+  .col-12.col-sm-6.col-md-4.col-lg-3:nth-child(n+5) {
+    display: none;
+  }
+}
+
+/* Планшеты - 3 карточки (768px-991px) */
+@media (min-width: 768px) and (max-width: 991.99px) {
+  .col-12.col-sm-6.col-md-4.col-lg-3 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+
+  /* Показываем все карточки */
+  .col-12.col-sm-6.col-md-4.col-lg-3:nth-child(n+5) {
+    display: block;
+  }
+}
+
+/* Десктоп - 4 карточки (>992px) */
+@media (min-width: 992px) {
+  .col-12.col-sm-6.col-md-4.col-lg-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  /* Скрываем 5-ю и 6-ю карточки */
+  .col-12.col-sm-6.col-md-4.col-lg-3:nth-child(n+5) {
+    display: none;
+  }
+}
